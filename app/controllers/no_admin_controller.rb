@@ -1,0 +1,2 @@
+class NoAdminController < ApplicationController
+end
