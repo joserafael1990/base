@@ -8,6 +8,7 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
+  config.action_mailer.perform_deliveries = true
 
   # Show full error reports.
   config.consider_all_requests_local = true
@@ -32,6 +33,15 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+     :address              => "smtp.zoho.com",
+     :port                 => 587,
+     :domain               => 'home-b.co',
+     :user_name            => 'info@home-b.co',
+     :password             => 'Jr18990787',
+     :authentication       => :plain,
+     :enable_starttls_auto => true  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
