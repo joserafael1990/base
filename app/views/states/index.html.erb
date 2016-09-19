@@ -1,0 +1,22 @@
+<%=render 'layouts/admin'%>
+<div class="col-md-9">
+	<div class="col-sm-offset-2 col-sm-10">
+		<h2>Estados</h2> <br>
+		<table>
+			<tr>
+				<th>Nombre</th>
+				<th colspan="2">Acciones</th>
+			</tr>
+
+			<% @states.each do |state|%>
+			<tr>
+				<td><%=state.name %></td>
+				<td><%= link_to raw('<span class="glyphicon glyphicon-eye-open fa-2x"></span>'), state_path(state) %></td>
+				<td><%= link_to raw('<span class="glyphicon glyphicon-edit fa-2x"></span>'), edit_state_path(state) %></td>
+				<td><%= link_to raw('<span class="glyphicon glyphicon-trash fa-2x"></span>'), state_path(state), method: :delete, data: { confirm: '¿Está seguro?'} %></td>
+			</tr>
+			<% end %>
+		</table>
+		<%= link_to 'Nuevo estado', new_state_path %>
+	</div>
+</div>
