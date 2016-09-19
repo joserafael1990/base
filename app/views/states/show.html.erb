@@ -8,6 +8,6 @@
 		<%= @state.name%>
 	</p>
 	<p>
-		<%= link_to 'Atrás', states_path %> | <%= link_to 'Editar', edit_state_path(@state) %>
+		<%= link_to 'Atrás', states_path, {:class=>"btn btn-link"} %> | <%= link_to 'Editar', edit_state_path(@state), {:class=>"btn btn-link"} %>
 	</p>
 </div>
