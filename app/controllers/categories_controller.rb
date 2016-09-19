@@ -20,7 +20,7 @@ class CategoriesController < ApplicationController
   end
 
   def index
-    @categories = Category.all
+    @categories = Category.order(:name)
   end
   
   def new

@@ -22,7 +22,7 @@
  	end
 
  	def index
- 		@states = State.all
+ 		@states = State.order(:name)
  	end
 
  	def new
