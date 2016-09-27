@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Giveit</title>
+	<%= favicon_link_tag 'favicon.ico' %>
+	<title>Sparta</title>
 	<%= csrf_meta_tags %>
 
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,14 +16,12 @@
 				<% if user_signed_in? %>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="profile"><span class="glyphicon glyphicon-user"></span> Editar usuario</a></li>
-					<li> <%= link_to raw('Cerrar sesión <span class="glyphicon glyphicon-off"></span>'), destroy_user_session_path, :method => :delete, :class => "label label-danger" %></li>
-
-					
+					<li> <%= link_to raw('Cerrar sesión <span class="glyphicon glyphicon-off"></span>'), destroy_user_session_path, :method => :delete %></li>
 				</ul>
 				<% else %>
 				<ul class="nav navbar-nav navbar-right" >
 					<li><a href="signup">Registrarse</a></li>
-					<li><a href="login" class="label label-success">Iniciar sesión</a></li>
+					<li><a href="login" >Iniciar sesión</a></li>
 				</ul>
 				<% end %>
 			</div>
