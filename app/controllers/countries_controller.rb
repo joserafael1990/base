@@ -22,7 +22,7 @@
 
  	def index
 		@search = Country.ransack(params[:q])
-		@countries = @search.result.page(params[:page]).per(20)
+		@countries = @search.result.page(params[:page]).per(20).order(:name)
  	end
 
  	def new

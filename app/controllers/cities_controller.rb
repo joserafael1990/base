@@ -1,6 +1,6 @@
 class CitiesController < ApplicationController
 	before_action :authenticate_user!, except:  [:show, :index]
-	before_action :set_city, except: [:index, :new]
+	before_action :set_city, except: [:index, :new, :create]
 
 	def create
 		@city = City.new(city_params)

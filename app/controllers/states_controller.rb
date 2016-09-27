@@ -19,9 +19,7 @@
 
  	def find_states_given_country_id
 	   country_id = params[:country_id]#utilizes the url to extract country_id ".../find_states_given_country_id?country_id=1"
-	   puts "THIS IS MY Country ID :: #{country_id}"#view this in teminal
-	   states = State.search_for_country_id(country_id).as_json#query the model for the data and convert it to a hash using as_json
-	   puts "THESE ARE MY states IN A HASH :: #{states}"
+	   states = State.search_for_country_id(country_id).order(:name).as_json#query the model for the data and convert it to a hash using as_json
 	   respond_to do |format|
 	        format.json { 
 	            render json: states
@@ -34,7 +32,7 @@
 
  	def index
 		@search = State.ransack(params[:q])
-		@states = @search.result.page(params[:page]).per(20)
+		@states = @search.result.page(params[:page]).per(20).order(:name)
  	end
 
  	def new
